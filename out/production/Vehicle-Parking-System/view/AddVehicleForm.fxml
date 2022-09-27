@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addVehicleContext" prefHeight="296.0" prefWidth="647.0" style="-fx-background-color: #130f40; -fx-border-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddVehicleFormController">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="487.0" layoutY="231.0" onAction="#actionAddVehicle" prefHeight="36.0" prefWidth="112.0" style="-fx-background-color: #2ecc71;" text="Add Vehicle" textFill="#0a0a0a">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtVehicleNumber" focusColor="WHITE" layoutX="165.0" layoutY="66.0" onAction="#moveToWeight" onMouseClicked="#hideLable" prefHeight="29.0" prefWidth="169.0" style="-fx-background-color: #ecf0f1;" unFocusColor="#ffcc00">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMaxWeight" focusColor="WHITE" focusTraversable="false" layoutX="165.0" layoutY="118.0" onAction="#moveToPassengers" onMouseClicked="#hideNumberError" prefHeight="29.0" prefWidth="169.0" style="-fx-background-color: #ecf0f1;" unFocusColor="#ffc100">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtNoOfPassengers" focusColor="WHITE" focusTraversable="false" layoutX="165.0" layoutY="175.0" onAction="#moveToType" onMouseClicked="#hideNumberError" prefHeight="29.0" prefWidth="169.0" style="-fx-background-color: #ecf0f1;" unFocusColor="#ffe800">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <Label alignment="CENTER_RIGHT" layoutX="34.0" layoutY="71.0" prefHeight="25.0" prefWidth="112.0" text="Vehicle Number" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="123.0" prefHeight="25.0" prefWidth="137.0" text="Maximum Weight (kg)" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="181.0" prefHeight="25.0" prefWidth="112.0" text="No of Passengers" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="354.0" layoutY="68.0" prefHeight="25.0" prefWidth="86.0" text="Vehicle Type" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblError" layoutX="120.0" layoutY="234.0" prefHeight="29.0" prefWidth="363.0" text="This vehicle type add over limit, please select another vehicle type" textFill="#e41313" visible="false" />
+      <Label fx:id="lblSuccessful" layoutX="339.0" layoutY="236.0" prefHeight="25.0" prefWidth="155.0" text="Vehicle add Successfully " textFill="WHITE" visible="false" />
+      <Label fx:id="lblWeightError" alignment="CENTER_RIGHT" layoutX="213.0" layoutY="131.0" prefHeight="17.0" prefWidth="122.0" text="Enter number format" textAlignment="RIGHT" textFill="#ff1f1f" visible="false" />
+      <Label fx:id="lblPassengerError" alignment="CENTER_RIGHT" layoutX="212.0" layoutY="187.0" prefHeight="17.0" prefWidth="122.0" text="Enter number format" textAlignment="RIGHT" textFill="#ff1f1f" visible="false" />
+      <Label fx:id="lblNumberError" alignment="CENTER_RIGHT" layoutX="212.0" layoutY="75.0" prefHeight="17.0" prefWidth="122.0" text="Enter Vehicle number" textAlignment="RIGHT" textFill="#ff1f1f" visible="false" />
+      <ComboBox fx:id="cmbBoxVehicleType" focusTraversable="false" layoutX="449.0" layoutY="68.0" onMouseClicked="#hideError" prefWidth="150.0" />
+      <Label fx:id="lblError2" alignment="CENTER_RIGHT" layoutX="473.0" layoutY="74.0" prefHeight="17.0" prefWidth="101.0" text="Select vehicle type" textAlignment="RIGHT" textFill="#e41313" visible="false" />
+      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="625.0" layoutY="2.0" onMouseClicked="#closeAddVehicle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

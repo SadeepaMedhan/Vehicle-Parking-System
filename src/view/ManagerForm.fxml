@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="managerFormContxt" prefHeight="578.0" prefWidth="1184.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerFormController">
+   <children>
+      <ImageView fitHeight="572.0" fitWidth="964.0" layoutX="217.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pageback.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblVehicles" layoutX="265.0" layoutY="116.0" opacity="0.9" prefHeight="439.0" prefWidth="880.0" visible="false">
+        <columns>
+          <TableColumn fx:id="colVNumber" prefWidth="164.0" text="Vehicle Number" />
+          <TableColumn fx:id="colVType" prefWidth="129.0" text="Vehicle Type" />
+            <TableColumn fx:id="colMaxWeight" prefWidth="158.0" style="-fx-alignment: CENTER;" text="Maximum Weight(kg)" />
+            <TableColumn fx:id="colVNoOfPassenger" prefWidth="166.0" style="-fx-alignment: CENTER;" text="Number of Passengers" />
+            <TableColumn fx:id="colVDriver" prefWidth="182.0" text="Driver" />
+            <TableColumn fx:id="colVSlot" prefWidth="91.0" style="-fx-alignment: CENTER;" text="Slot" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblOnDelivery" layoutX="265.0" layoutY="116.0" opacity="0.9" prefHeight="439.0" prefWidth="880.0" visible="false">
+         <columns>
+            <TableColumn fx:id="colDeliveryVehicleNumber" prefWidth="234.00003051757812" text="Vehicle Number" />
+            <TableColumn fx:id="colDeliveryVehicleType" prefWidth="186.0" text="Vehicle Type" />
+            <TableColumn fx:id="colDeliveryDriverName" prefWidth="257.0" text="Driver Name" />
+            <TableColumn fx:id="colLeftTime" prefWidth="201.0" style="-fx-alignment: CENTER;" text="Left Time" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tblInParking" layoutX="265.0" layoutY="116.0" opacity="0.9" prefHeight="439.0" prefWidth="880.0" visible="false">
+        <columns>
+          <TableColumn fx:id="colParkedVehicleNumber" prefWidth="236.0" text="Vehicle Number" />
+          <TableColumn fx:id="colParkedVehicleType" prefWidth="203.0" text="Vehicle Type" />
+            <TableColumn fx:id="colParkedSlot" prefWidth="221.0" style="-fx-alignment: CENTER;" text="Parking Slot" />
+            <TableColumn fx:id="colParkedTime" prefWidth="219.0" style="-fx-alignment: CENTER;" text="Parked Time" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblDrivers" layoutX="265.0" layoutY="116.0" opacity="0.9" prefHeight="439.0" prefWidth="880.0" visible="false">
+        <columns>
+          <TableColumn fx:id="colDriverName" prefWidth="232.0" text="Name" />
+          <TableColumn fx:id="colDriverNIC" prefWidth="127.0" text="NIC" />
+            <TableColumn fx:id="colLicenseNo" prefWidth="142.0" text="Driving License No." />
+            <TableColumn fx:id="colAddress" prefWidth="222.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="154.0" text="Contact" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddVehicle" focusTraversable="false" layoutY="325.0" onAction="#openAddVehicleForm" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: black;" text="Add Vehicle" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnAddDriver" focusTraversable="false" layoutY="375.0" onAction="#openAddDriverForm" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: black;" text="Add Driver" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutY="527.0" onAction="#openDashBoardForm" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: #2c3e50;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ComboBox fx:id="cmbBoxIsSelect" layoutX="24.0" layoutY="58.0" prefHeight="32.0" prefWidth="159.0" promptText="In Parking" visible="false" />
+      <AnchorPane prefHeight="32.0" prefWidth="1184.0" style="-fx-background-color: #130f40;">
+         <children>
+            <Label layoutX="33.0" layoutY="5.0" prefHeight="17.0" prefWidth="133.0" text="Parking System" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/parking-area.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="imageParking" fitHeight="49.0" fitWidth="55.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/manager.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnPark" focusTraversable="false" layoutY="125.0" onAction="#showInParkingTable" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: black;" text="In Parking" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelivery" focusTraversable="false" layoutY="175.0" onAction="#showDeliveryTable" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: black;" text="On Delivery" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnVehicles" focusTraversable="false" layoutY="225.0" onAction="#showVehicles" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: black;" text="Vehicles" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDrivers" focusTraversable="false" layoutY="275.0" onAction="#showDrivers" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: black;" text="Drivers" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="73.0" layoutY="74.0" prefHeight="17.0" prefWidth="71.0" text="Manager" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutY="483.0" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: #2c3e50;" text="Account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="10.0" layoutY="108.0" prefWidth="200.0" />
+      <AnchorPane layoutX="514.0" layoutY="41.0" opacity="0.15" prefHeight="49.0" prefWidth="382.0" style="-fx-background-color: blue; -fx-background-radius: 10;" />
+      <Label layoutX="596.0" layoutY="55.0" prefHeight="21.0" prefWidth="81.0" text="All Vehicles :" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="lblVCount" layoutX="677.0" layoutY="55.0" prefHeight="21.0" prefWidth="21.0" text="0" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="719.0" layoutY="55.0" prefHeight="21.0" prefWidth="71.0" text="All Drivers :" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDCount" layoutX="793.0" layoutY="55.0" prefHeight="21.0" prefWidth="21.0" text="0" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
